@@ -2,8 +2,12 @@
 module.exports = {
   purge: ['./src/**/*.jsx', './src/**/*.js'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        peach: '#fae3eb',
+      },
+    },
   },
   variants: {},
   plugins: [],
-}
+};
