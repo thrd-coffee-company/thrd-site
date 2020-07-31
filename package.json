@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Ozzy Cardenas <cardenas.ozzy@gmail.com>",
   "dependencies": {
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "gatsby": "^2.23.12",
@@ -17,6 +19,7 @@
     "gatsby-plugin-sharp": "^2.6.14",
     "gatsby-source-filesystem": "^2.3.14",
     "gatsby-transformer-sharp": "^2.5.7",
+    "jest": "^26.2.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
