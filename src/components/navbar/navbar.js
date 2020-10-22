@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import Transition from '../transition';
 import { useStaticQuery, graphql } from 'gatsby';
+import scrollTo from 'gatsby-plugin-smoothscroll';
+import tw from 'twin.macro';
 import Img from 'gatsby-image';
 
 export default function Navbar({ data }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative">
       <div className="relative pt-0 md:pt-6 pb-12 sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6">
           <nav className="relative flex items-center justify-between sm:h-10 md:justify-center">
             <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
               <div className="flex items-center justify-between w-full md:w-auto">
-                <a href="#" aria-label="Home">
+                <a href="/" aria-label="Home">
                   <ThrdBrandImg
                     className="w-24 h-auto sm:w-20 md:mr-4 lg:m-0"
                     alt="Logo"
@@ -47,36 +49,16 @@ export default function Navbar({ data }) {
             </div>
             <div className="hidden md:flex md:space-x-10">
               {/* TODO: too much repitition here */}
-              <a
-                href="#"
-                className="uppercase font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
-              >
-                Service
-              </a>
-              <a
-                href="#"
-                className="uppercase font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
-              >
-                Responsibility
-              </a>
-              <a
-                href="#"
-                className="uppercase font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
-              >
+              <NavItem onClick={() => scrollTo('#bar-offerings')}>
+                Bar Offerings
+              </NavItem>
+              <NavItem onClick={() => scrollTo('#services')}>Services</NavItem>
+              <NavItem onClick={() => scrollTo('#book-event')}>
                 Book Event
-              </a>
-              <a
-                href="#"
-                className="uppercase font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
-              >
+              </NavItem>
+              <NavItem href="#about-us" onClick={() => scrollTo('#about-us')}>
                 About Us
-              </a>
-              <a
-                href="#"
-                className="uppercase font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
-              >
-                FAQ
-              </a>
+              </NavItem>
             </div>
           </nav>
         </div>
@@ -96,21 +78,16 @@ export default function Navbar({ data }) {
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
         >
-          <div className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+          <div className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-40">
             <div className="rounded-lg shadow-md">
               <div
-                className="rounded-lg bg-white shadow-xs overflow-hidden"
+                className="rounded-lg bg-white shadow-xs"
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="main-menu"
               >
                 <div className="px-5 pt-4 flex items-center justify-between">
                   <div>
-                    <img
-                      className="h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg"
-                      alt=""
-                    />
                     <ThrdBrandImg
                       className="w-24 h-auto sm:w-20 md:mr-4 lg:m-0"
                       alt="Third Logo"
@@ -140,68 +117,35 @@ export default function Navbar({ data }) {
                   </div>
                 </div>
                 <div className="px-2 pt-2 pb-3">
-                  <a
-                    href="#"
-                    className="uppercase block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
+                  <MobileNavItem
                     role="menuitem"
+                    onClick={() => scrollTo('#bar-offerings')}
                   >
-                    Service
-                  </a>
-                  <a
-                    href="#"
-                    className="uppercase mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
+                    Bar Offerings
+                  </MobileNavItem>
+                  <MobileNavItem
                     role="menuitem"
+                    onClick={() => scrollTo('#services')}
                   >
-                    Responsibility
-                  </a>
-                  <a
-                    href="#"
-                    className="uppercase mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
+                    Services
+                  </MobileNavItem>
+                  <MobileNavItem
                     role="menuitem"
-                  >
-                    Marketplace
-                  </a>
-                  <a
-                    href="#"
-                    className="uppercase mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
-                    role="menuitem"
+                    onClick={() => scrollTo('#book-event')}
                   >
                     Book Event
-                  </a>
-                  <a
-                    href="#"
-                    className="uppercase mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
+                  </MobileNavItem>
+                  <MobileNavItem
                     role="menuitem"
+                    onClick={() => scrollTo('#about-us')}
                   >
                     About Us
-                  </a>
-                  <a
-                    href="#"
-                    className="uppercase mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
-                    role="menuitem"
-                  >
-                    FAQ
-                  </a>
+                  </MobileNavItem>
                 </div>
               </div>
             </div>
           </div>
         </Transition>
-
-        <main className="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28">
-          <div className="text-center">
-            <h2 className="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
-              Data to enrich your
-              <br className="xl:hidden" />
-              <span className="text-indigo-600"> online business</span>
-            </h2>
-            <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-              fugiat aliqua.
-            </p>
-          </div>
-        </main>
       </div>
     </div>
   );
@@ -231,3 +175,11 @@ function ThrdBrandImg({ className, ...props }) {
     />
   );
 }
+
+const NavItem = tw.button`
+focus:outline-none uppercase font-medium text-ocean hover:text-oceanDark transition duration-150 ease-in-out
+`;
+
+const MobileNavItem = tw.button`
+uppercase block px-3 py-2 rounded-md text-base font-medium text-ocean hover:text-oceanDark hover:bg-gray-50 focus:outline-none focus:text-oceanDark focus:bg-gray-50 transition duration-150 ease-in-out
+`;
