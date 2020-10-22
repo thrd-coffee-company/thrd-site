@@ -30,8 +30,8 @@ function ContactForm() {
           Contact sales
         </h2>
         <p className="mt-4 text-lg leading-6 text-gray-500">
-          Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat
-          massa dictumst amet. Sapien tortor lacus arcu.
+          We are now accepting bookings! <br /> Fill out the form below to find
+          out more.
         </p>
       </div>
       <div className="mt-12">
