@@ -4,7 +4,8 @@ import ReactPlayer from 'react-player';
 import { ContactForm } from '../components/contact-form';
 import tw from 'twin.macro';
 import cartPopUp from '../images/cart-photography/thrd_popup.jpg';
-import lateArt2 from '../images/cart-photography/late-art2.jpg';
+import latteToGoCup from '../images/cart-photography/latte-togo-cup.jpeg';
+import openBarDemo from '../images/cart-photography/open-bar-demo.jpeg';
 import coldbrew from '../images/cart-photography/coldbrew-can.jpg';
 import kombucha from '../images/cart-photography/kombucha-closeup.jpg';
 import cbd from '../images/cart-photography/vybes-closeup.jpg';
@@ -55,7 +56,7 @@ function IndexPage() {
           </Copy>
           <div className="flex justify-center sm:justify-between flex-wrap p-10">
             <div>
-              <CirleImage src={lateArt2} alt="Latte, Cortado, Espresso" />
+              <CirleImage src={latteToGoCup} alt="Latte, Cortado, Espresso" />
               <Copy>Espresso, Cortado, Latte</Copy>
             </div>
             <div>
@@ -78,7 +79,7 @@ function IndexPage() {
             <div className="lg:grid lg:grid-cols-2">
               <div>
                 <img
-                  src={cartPopUp}
+                  src={openBarDemo}
                   className="lg:w-2/4 mb-4 lg:mb-8"
                   alt="open bar program"
                 />
