@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
 import Transition from '../transition';
 import { useStaticQuery, graphql } from 'gatsby';
+import scrollTo from 'gatsby-plugin-smoothscroll';
+import tw from 'twin.macro';
 import Img from 'gatsby-image';
 
 export default function Navbar({ data }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  function handleMenuClick() {
-    setIsOpen(!isOpen);
-  }
-
   return (
-    <div className="relative overflow-hidden">
-      <div className="relative pt-6 pb-12 sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32">
+    <div className="relative">
+      <div className="relative pt-0 md:pt-6 pb-12 sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6">
           <nav className="relative flex items-center justify-between sm:h-10 md:justify-center">
             <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
               <div className="flex items-center justify-between w-full md:w-auto">
-                <a href="#" ariaabel="Home">
-                  <ThrdBrandImg className="w-16 h-auto sm:h-10" alt="Logo" />
+                <a href="/" aria-label="Home">
+                  <ThrdBrandImg
+                    className="w-24 h-auto sm:w-20 md:mr-4 lg:m-0"
+                    alt="Logo"
+                  />
                 </a>
                 <div className="-mr-2 flex items-center md:hidden">
                   <button
@@ -47,40 +48,17 @@ export default function Navbar({ data }) {
               </div>
             </div>
             <div className="hidden md:flex md:space-x-10">
-              <a
-                href="#"
-                className="font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
-              >
-                Product
-              </a>
-              <a
-                href="#"
-                className="font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
-              >
-                Features
-              </a>
-              <a
-                href="#"
-                className="font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
-              >
-                Marketplace
-              </a>
-              <a
-                href="#"
-                className="font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
-              >
-                Company
-              </a>
-            </div>
-            <div className="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
-              <span className="inline-flex rounded-md shadow">
-                <a
-                  href="#"
-                  className="inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-600 bg-white hover:text-indigo-500 focus:outline-none focus:border-indigo-300 focus:shadow-outline-indigo active:bg-gray-50 active:text-indigo-700 transition duration-150 ease-in-out"
-                >
-                  Log in
-                </a>
-              </span>
+              {/* TODO: too much repitition here */}
+              <NavItem onClick={() => scrollTo('#bar-offerings')}>
+                Bar Offerings
+              </NavItem>
+              <NavItem onClick={() => scrollTo('#services')}>Services</NavItem>
+              <NavItem onClick={() => scrollTo('#book-event')}>
+                Book Event
+              </NavItem>
+              <NavItem href="#about-us" onClick={() => scrollTo('#about-us')}>
+                About Us
+              </NavItem>
             </div>
           </nav>
         </div>
@@ -100,20 +78,19 @@ export default function Navbar({ data }) {
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
         >
-          <div className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+          <div className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-40">
             <div className="rounded-lg shadow-md">
               <div
-                className="rounded-lg bg-white shadow-xs overflow-hidden"
+                className="rounded-lg bg-white shadow-xs"
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="main-menu"
               >
                 <div className="px-5 pt-4 flex items-center justify-between">
                   <div>
-                    <img
-                      className="h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg"
-                      alt=""
+                    <ThrdBrandImg
+                      className="w-24 h-auto sm:w-20 md:mr-4 lg:m-0"
+                      alt="Third Logo"
                     />
                   </div>
                   <div className="-mr-2">
@@ -140,65 +117,50 @@ export default function Navbar({ data }) {
                   </div>
                 </div>
                 <div className="px-2 pt-2 pb-3">
-                  <a
-                    href="#"
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
+                  <MobileNavItem
                     role="menuitem"
+                    onClick={() => scrollTo('#bar-offerings')}
                   >
-                    Product
-                  </a>
-                  <a
-                    href="#"
-                    className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
+                    Bar Offerings
+                  </MobileNavItem>
+                  <MobileNavItem
                     role="menuitem"
+                    onClick={() => scrollTo('#services')}
                   >
-                    Features
-                  </a>
-                  <a
-                    href="#"
-                    className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
+                    Services
+                  </MobileNavItem>
+                  <MobileNavItem
                     role="menuitem"
+                    onClick={() => scrollTo('#book-event')}
                   >
-                    Marketplace
-                  </a>
-                  <a
-                    href="#"
-                    className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
+                    Book Event
+                  </MobileNavItem>
+                  <MobileNavItem
                     role="menuitem"
+                    onClick={() => scrollTo('#about-us')}
                   >
-                    Company
-                  </a>
+                    About Us
+                  </MobileNavItem>
                 </div>
               </div>
             </div>
           </div>
         </Transition>
-
-        <main className="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28">
-          <div className="text-center">
-            <h2 className="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
-              Data to enrich your
-              <br className="xl:hidden" />
-              <span className="text-indigo-600"> online business</span>
-            </h2>
-            <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-              fugiat aliqua.
-            </p>
-          </div>
-        </main>
       </div>
     </div>
   );
+
+  function handleMenuClick() {
+    setIsOpen(!isOpen);
+  }
 }
 
 function ThrdBrandImg({ className, ...props }) {
   const data = useStaticQuery(graphql`
     query {
-      thrdLogo: file(relativePath: { eq: "thrd_brand.png" }) {
+      thrdLogo: file(relativePath: { eq: "thrd_logo_favicon.png" }) {
         childImageSharp {
-          fluid(maxWidth: 100) {
+          fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -206,8 +168,18 @@ function ThrdBrandImg({ className, ...props }) {
     }
   `);
   return (
-    <div className={className} {...props}>
-      <Img fluid={data.thrdLogo.childImageSharp.fluid} />
-    </div>
+    <Img
+      className={className}
+      fluid={data.thrdLogo.childImageSharp.fluid}
+      {...props}
+    />
   );
 }
+
+const NavItem = tw.button`
+focus:outline-none uppercase font-medium text-ocean hover:text-oceanDark transition duration-150 ease-in-out
+`;
+
+const MobileNavItem = tw.button`
+uppercase block px-3 py-2 rounded-md text-base font-medium text-ocean hover:text-oceanDark hover:bg-gray-50 focus:outline-none focus:text-oceanDark focus:bg-gray-50 transition duration-150 ease-in-out
+`;
