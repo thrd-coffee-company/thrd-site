@@ -56,9 +56,9 @@ export default function Navbar({ data }) {
               <NavItem onClick={() => scrollTo('#book-event')}>
                 Book Event
               </NavItem>
-              <NavItem href="#about-us" onClick={() => scrollTo('#about-us')}>
+              {/* <NavItem href="#about-us" onClick={() => scrollTo('#about-us')}>
                 About Us
-              </NavItem>
+              </NavItem> */}
             </div>
           </nav>
         </div>
@@ -135,12 +135,12 @@ export default function Navbar({ data }) {
                   >
                     Book Event
                   </MobileNavItem>
-                  <MobileNavItem
+                  {/* <MobileNavItem
                     role="menuitem"
                     onClick={() => scrollTo('#about-us')}
                   >
                     About Us
-                  </MobileNavItem>
+                  </MobileNavItem> */}
                 </div>
               </div>
             </div>
