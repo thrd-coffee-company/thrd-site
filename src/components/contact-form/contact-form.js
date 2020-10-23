@@ -128,9 +128,9 @@ function ContactForm() {
                   aria-label="Country"
                   className="form-select h-full py-0 pl-4 pr-8 border-transparent bg-transparent text-gray-500 transition ease-in-out duration-150"
                 >
-                  <option>US</option>
-                  <option>CA</option>
-                  <option>EU</option>
+                  <option name="US">US</option>
+                  <option name="CA">CA</option>
+                  <option name="EU">EU</option>
                 </select>
               </div>
               <input
