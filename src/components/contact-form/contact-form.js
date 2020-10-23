@@ -59,6 +59,7 @@ function ContactForm() {
             <div className="mt-1 relative rounded-md shadow-sm">
               <input
                 id="first_name"
+                name="first_name"
                 className="form-input py-3 px-4 block w-full transition ease-in-out duration-150"
                 onChange={handleChange}
               />
@@ -74,6 +75,7 @@ function ContactForm() {
             <div className="mt-1 relative rounded-md shadow-sm">
               <input
                 id="last_name"
+                name="last_name"
                 className="form-input py-3 px-4 block w-full transition ease-in-out duration-150"
                 onChange={handleChange}
               />
@@ -89,6 +91,7 @@ function ContactForm() {
             <div className="mt-1 relative rounded-md shadow-sm">
               <input
                 id="company"
+                name="company"
                 className="form-input py-3 px-4 block w-full transition ease-in-out duration-150"
                 onChange={handleChange}
               />
@@ -105,6 +108,7 @@ function ContactForm() {
               <input
                 id="email"
                 type="email"
+                name="email"
                 className="form-input py-3 px-4 block w-full transition ease-in-out duration-150"
                 onChange={handleChange}
               />
@@ -120,6 +124,7 @@ function ContactForm() {
             <div className="mt-1 relative rounded-md shadow-sm">
               <div className="absolute inset-y-0 left-0 flex items-center">
                 <select
+                  name="country code"
                   aria-label="Country"
                   className="form-select h-full py-0 pl-4 pr-8 border-transparent bg-transparent text-gray-500 transition ease-in-out duration-150"
                 >
@@ -130,6 +135,7 @@ function ContactForm() {
               </div>
               <input
                 id="phone_number"
+                name="phone_number"
                 className="form-input py-3 px-4 block w-full pl-20 transition ease-in-out duration-150"
                 placeholder="+1 (555) 987-6543"
                 onChange={handleChange}
@@ -146,6 +152,7 @@ function ContactForm() {
             <div className="mt-1 relative rounded-md shadow-sm">
               <textarea
                 id="message"
+                name="message"
                 rows="4"
                 className="form-textarea py-3 px-4 block w-full transition ease-in-out duration-150"
                 onChange={handleChange}
