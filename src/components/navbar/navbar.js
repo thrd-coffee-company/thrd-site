@@ -56,6 +56,9 @@ export default function Navbar({ data }) {
               <NavItem onClick={() => scrollTo('#book-event')}>
                 Book Event
               </NavItem>
+              <NavItem onClick={() => scrollTo('#bar-offerings')}>
+                Order Merch
+              </NavItem>
               {/* <NavItem href="#about-us" onClick={() => scrollTo('#about-us')}>
                 About Us
               </NavItem> */}
