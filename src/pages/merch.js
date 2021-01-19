@@ -28,7 +28,7 @@ const MerchPage = () => (
           <Copy>Sweaters</Copy>
         </div>
         <div>
-          {/* <CirleImage src={shirt} alt="Shirt" /> */}
+          {/* <CirleImage src={shirt}  alt="Shirt" /> */}
           <HoverImage
             src={shirt}
             hoverSrc={sweater}

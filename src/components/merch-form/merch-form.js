@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { navigate } from 'gatsby-link';
 import sweater from '../../images/merch-items/sweaters-front.jpg';
-
+import tw from 'twin.macro';
 function MerchForm() {
   const [state, setState] = useState({});
 
@@ -41,7 +41,7 @@ function MerchForm() {
           onSubmit={handleSubmit}
           className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
         >
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="form-name" value="merch" />
           <label className="hidden">
             Don’t fill this out:{' '}
             <input name="bot-field" onChange={handleChange} />
@@ -155,9 +155,7 @@ function MerchForm() {
                     aria-label="Select-Merch"
                     className="form-select h-full py-3 px-4 w-full block border-transparent bg-white text-gray-500 transition ease-in-out duration-150"
                   >
-                    <option name="Sweater" src={sweater} alt="Sweaters">
-                      Sweater
-                    </option>
+                    <option name="Sweater">Sweater</option>
                     <option name="Shirt">Shirt</option>
                   </select>
                 </div>
@@ -228,5 +226,9 @@ function encode(data) {
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&');
 }
+
+const CirleImage = tw.img`
+inline-block h-24 w-24 rounded-full object-cover
+`;
 
 export default MerchForm;
