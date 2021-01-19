@@ -56,6 +56,7 @@ function MerchForm() {
             <div className="mt-1 relative rounded-md shadow-sm">
               <input
                 id="first_name"
+                required=""
                 name="first_name"
                 className="form-input py-3 px-4 block w-full transition ease-in-out duration-150"
                 onChange={handleChange}
@@ -72,6 +73,7 @@ function MerchForm() {
             <div className="mt-1 relative rounded-md shadow-sm">
               <input
                 id="last_name"
+                required=""
                 name="last_name"
                 className="form-input py-3 px-4 block w-full transition ease-in-out duration-150"
                 onChange={handleChange}
@@ -89,6 +91,7 @@ function MerchForm() {
               <div className="absolute inset-y-0 left-0 flex items-center">
                 <select
                   name="country code"
+                  required=""
                   aria-label="Country"
                   className="form-select h-full py-0 pl-4 pr-8 border-transparent bg-transparent text-gray-500 transition ease-in-out duration-150"
                 >
@@ -117,6 +120,7 @@ function MerchForm() {
               <input
                 id="email"
                 type="email"
+                required=""
                 name="email"
                 className="form-input py-3 px-4 block w-full transition ease-in-out duration-150"
                 onChange={handleChange}
@@ -133,6 +137,7 @@ function MerchForm() {
             <div className="mt-1 relative rounded-md shadow-sm">
               <input
                 id="address"
+                required=""
                 type="address"
                 name="address"
                 className="form-input py-3 px-4 block w-full transition ease-in-out duration-150"
@@ -154,9 +159,14 @@ function MerchForm() {
                     name="which merch"
                     aria-label="Select-Merch"
                     className="form-select h-full py-3 px-4 w-full block border-transparent bg-white text-gray-500 transition ease-in-out duration-150"
+                    onChange={handleChange}
                   >
-                    <option name="Sweater">Sweater</option>
-                    <option name="Shirt">Shirt</option>
+                    <option value="Sweater" name="Sweater">
+                      Sweater
+                    </option>
+                    <option value="Shirt" name="Shirt">
+                      Shirt
+                    </option>
                   </select>
                 </div>
               </div>
@@ -174,10 +184,17 @@ function MerchForm() {
                     name="which size"
                     aria-label="Select-Size"
                     className="form-select h-full py-3 px-4 w-full block border-transparent bg-white text-gray-500 transition ease-in-out duration-150"
+                    onChange={handleChange}
                   >
-                    <option name="Small">Small</option>
-                    <option name="Medium">Medium</option>
-                    <option name="Large">Large</option>
+                    <option value="Small" name="Small">
+                      Small
+                    </option>
+                    <option value="Medium" name="Medium">
+                      Medium
+                    </option>
+                    <option value="Large" name="Large">
+                      Large
+                    </option>
                   </select>
                 </div>
               </div>
@@ -195,11 +212,20 @@ function MerchForm() {
                     name="which amount"
                     aria-label="Select-amount"
                     className="form-select h-full py-3 px-4 w-full block border-transparent bg-white text-gray-500 transition ease-in-out duration-150"
+                    onChange={handleChange}
                   >
-                    <option name="1">1</option>
-                    <option name="2">2</option>
-                    <option name="3">3</option>
-                    <option name="4">4</option>
+                    <option value="1" name="1">
+                      1
+                    </option>
+                    <option value="2" name="2">
+                      2
+                    </option>
+                    <option value="3" name="3">
+                      3
+                    </option>
+                    <option value="4" name="4">
+                      4
+                    </option>
                   </select>
                 </div>
               </div>
