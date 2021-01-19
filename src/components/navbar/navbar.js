@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import tw from 'twin.macro';
 import Img from 'gatsby-image';
+import { Link } from 'gatsby';
 
 export default function Navbar({ data }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,9 +57,12 @@ export default function Navbar({ data }) {
               <NavItem onClick={() => scrollTo('#book-event')}>
                 Book Event
               </NavItem>
-              <NavItem onClick={() => scrollTo('#bar-offerings')}>
+              <Link
+                to="/merch"
+                className="focus:outline-none uppercase font-medium text-ocean hover:text-oceanDark transition duration-150 ease-in-out"
+              >
                 Order Merch
-              </NavItem>
+              </Link>
               {/* <NavItem href="#about-us" onClick={() => scrollTo('#about-us')}>
                 About Us
               </NavItem> */}
@@ -138,6 +142,12 @@ export default function Navbar({ data }) {
                   >
                     Book Event
                   </MobileNavItem>
+                  <Link
+                    to="/merch"
+                    className="uppercase block px-3 py-2 rounded-md text-base font-medium text-ocean hover:text-oceanDark hover:bg-gray-50 focus:outline-none focus:text-oceanDark focus:bg-gray-50 transition duration-150 ease-in-out"
+                  >
+                    Order Merch
+                  </Link>
                   {/* <MobileNavItem
                     role="menuitem"
                     onClick={() => scrollTo('#about-us')}

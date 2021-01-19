@@ -1,8 +1,10 @@
 import React from 'react';
+import { MerchForm } from '../components/merch-form';
 import tw from 'twin.macro';
 import Layout from '../components/layout';
 import shirt from '../images/merch-items/shirt-front.jpg';
 import sweater from '../images/merch-items/sweaters-front.jpg';
+import HoverImage from 'react-hover-image';
 
 const MerchPage = () => (
   <Layout>
@@ -17,14 +19,27 @@ const MerchPage = () => (
     >
       <div className="flex justify-self-center  flex-wrap p-10 sm:justify-around">
         <div>
-          <CirleImage src={sweater} alt="Sweaters" />
+          {/* <CirleImage src={sweater} alt="Sweaters" className="hover:opacity-0 cur" /> */}
+          <HoverImage
+            src={sweater}
+            hoverSrc={shirt}
+            className="inline-block h-48 w-48 rounded-full object-cover "
+          />
           <Copy>Sweaters</Copy>
         </div>
         <div>
-          <CirleImage src={shirt} alt="Shirt" />
-          <Copy>Shirt</Copy>
+          {/* <CirleImage src={shirt} alt="Shirt" /> */}
+          <HoverImage
+            src={shirt}
+            hoverSrc={sweater}
+            className="inline-block h-48 w-48 rounded-full object-cover "
+          />
+          <Copy>Shirts</Copy>
         </div>
       </div>
+    </section>
+    <section>
+      <MerchForm />
     </section>
   </Layout>
 );
