@@ -5,9 +5,18 @@ import scrollTo from 'gatsby-plugin-smoothscroll';
 import tw from 'twin.macro';
 import Img from 'gatsby-image';
 import { Link } from 'gatsby';
+import { navigate } from '@reach/router';
 
-export default function Navbar({ data }) {
+export default function Navbar({ data, notHomeRoute }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  function handleNavItemClick(sectionId) {
+    if (notHomeRoute) {
+      navigate(`/${sectionId}`);
+      return;
+    }
+    scrollTo(sectionId);
+  }
 
   return (
     <div className="relative">
@@ -50,11 +59,13 @@ export default function Navbar({ data }) {
             </div>
             <div className="hidden md:flex md:space-x-10">
               {/* TODO: too much repitition here */}
-              <NavItem onClick={() => scrollTo('#bar-offerings')}>
+              <NavItem onClick={() => handleNavItemClick('#bar-offerings')}>
                 Bar Offerings
               </NavItem>
-              <NavItem onClick={() => scrollTo('#services')}>Services</NavItem>
-              <NavItem onClick={() => scrollTo('#book-event')}>
+              <NavItem onClick={() => handleNavItemClick('#services')}>
+                Services
+              </NavItem>
+              <NavItem onClick={() => handleNavItemClick('#book-event')}>
                 Book Event
               </NavItem>
               <Link
@@ -126,19 +137,19 @@ export default function Navbar({ data }) {
                 <div className="px-2 pt-2 pb-3">
                   <MobileNavItem
                     role="menuitem"
-                    onClick={() => scrollTo('#bar-offerings')}
+                    onClick={() => handleNavItemClick('#bar-offerings')}
                   >
                     Bar Offerings
                   </MobileNavItem>
                   <MobileNavItem
                     role="menuitem"
-                    onClick={() => scrollTo('#services')}
+                    onClick={() => handleNavItemClick('#services')}
                   >
                     Services
                   </MobileNavItem>
                   <MobileNavItem
                     role="menuitem"
-                    onClick={() => scrollTo('#book-event')}
+                    onClick={() => handleNavItemClick('#book-event')}
                   >
                     Book Event
                   </MobileNavItem>

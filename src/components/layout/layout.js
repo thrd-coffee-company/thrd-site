@@ -2,11 +2,11 @@ import React from 'react';
 import tw from 'twin.macro';
 import Navbar from '../navbar';
 
-const Layout = ({ children }) => {
+const Layout = ({ notHomeRoute, children }) => {
   return (
     <>
       <Div>
-        <Navbar />
+        <Navbar notHomeRoute={notHomeRoute} />
         <main className="container mx-auto px-4 sm:px-6 lg:px-8">
           {children}
         </main>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { navigate } from 'gatsby-link';
-import sweater from '../../images/merch-items/sweaters-front.jpg';
-import tw from 'twin.macro';
+
 function MerchForm() {
   const [state, setState] = useState({});
 
@@ -30,6 +29,9 @@ function MerchForm() {
         <h2 className="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
           Place Order Here
         </h2>
+        <p className="mt-4 text-lg leading-6 text-gray-500">
+          Please fill out below, and you'll receive an invoice through Square
+        </p>
       </div>
       <div className="mt-12">
         <form
@@ -49,7 +51,7 @@ function MerchForm() {
           <div>
             <label
               htmlFor="first_name"
-              className="block text-sm front-medium leading-5 text-gray-700"
+              className="block text-sm font-medium leading-5 text-gray-700"
             >
               First Name
             </label>
@@ -66,7 +68,7 @@ function MerchForm() {
           <div>
             <label
               htmlFor="last_name"
-              className="block text-sm front-medium leading-5 text-gray-700"
+              className="block text-sm font-medium leading-5 text-gray-700"
             >
               Last Name
             </label>
@@ -95,9 +97,15 @@ function MerchForm() {
                   aria-label="Country"
                   className="form-select h-full py-0 pl-4 pr-8 border-transparent bg-transparent text-gray-500 transition ease-in-out duration-150"
                 >
-                  <option name="US">US</option>
-                  <option name="CA">CA</option>
-                  <option name="EU">EU</option>
+                  <option value="US" name="US">
+                    US
+                  </option>
+                  <option value="CA" name="CA">
+                    CA
+                  </option>
+                  <option value="EU" name="EU">
+                    EU
+                  </option>
                 </select>
               </div>
               <input
@@ -145,90 +153,21 @@ function MerchForm() {
               ></input>
             </div>
           </div>
-          <div className=" sm:col-span-2 flex space-x-4">
-            <div className="flex-1 ">
-              <label
-                htmlFor="select_merch"
-                className="block text-sm font-medium leading-5 text-gray-700"
-              >
-                Select Merch
-              </label>
-              <div className="mt-1 relative rounded-md shadow-sm">
-                <div className="inset-y-0 left-0 flex items-center">
-                  <select
-                    name="which merch"
-                    aria-label="Select-Merch"
-                    className="form-select h-full py-3 px-4 w-full block border-transparent bg-white text-gray-500 transition ease-in-out duration-150"
-                    onChange={handleChange}
-                  >
-                    <option value="Sweater" name="Sweater">
-                      Sweater
-                    </option>
-                    <option value="Shirt" name="Shirt">
-                      Shirt
-                    </option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div className="flex-1 ">
-              <label
-                htmlFor="select_size"
-                className="block text-sm font-medium leading-5 text-gray-700"
-              >
-                Size
-              </label>
-              <div className="mt-1 relative rounded-md shadow-sm">
-                <div className="inset-y-0 left-0 flex items-center">
-                  <select
-                    name="which size"
-                    aria-label="Select-Size"
-                    className="form-select h-full py-3 px-4 w-full block border-transparent bg-white text-gray-500 transition ease-in-out duration-150"
-                    onChange={handleChange}
-                  >
-                    <option value="Small" name="Small">
-                      Small
-                    </option>
-                    <option value="Medium" name="Medium">
-                      Medium
-                    </option>
-                    <option value="Large" name="Large">
-                      Large
-                    </option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div className="flex-1">
-              <label
-                htmlFor="select_amount"
-                className="block text-sm font-medium leading-5 text-gray-700"
-              >
-                Amount
-              </label>
-              <div className="mt-1 relative rounded-md shadow-sm">
-                <div className="inset-y-0 left-0 flex items-center">
-                  <select
-                    name="which amount"
-                    aria-label="Select-amount"
-                    className="form-select h-full py-3 px-4 w-full block border-transparent bg-white text-gray-500 transition ease-in-out duration-150"
-                    onChange={handleChange}
-                  >
-                    <option value="1" name="1">
-                      1
-                    </option>
-                    <option value="2" name="2">
-                      2
-                    </option>
-                    <option value="3" name="3">
-                      3
-                    </option>
-                    <option value="4" name="4">
-                      4
-                    </option>
-                  </select>
-                </div>
-              </div>
+          <div className="sm:col-span-2">
+            <label
+              htmlFor="Order_description"
+              className="block text-sm font-medium leading-5 text-gray-700"
+            >
+              Please write which merch you'll like to order and the size.
+            </label>
+            <div className="mt-1 relative rounded-md shadow-sm">
+              <textarea
+                id="Order_description"
+                name="Order_description"
+                rows="4"
+                className="form-textarea py-3 px-4 block w-full transition ease-in-out duration-150"
+                onChange={handleChange}
+              ></textarea>
             </div>
           </div>
           <div className="sm:col-span-2">
@@ -252,9 +191,5 @@ function encode(data) {
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&');
 }
-
-const CirleImage = tw.img`
-inline-block h-24 w-24 rounded-full object-cover
-`;
 
 export default MerchForm;
