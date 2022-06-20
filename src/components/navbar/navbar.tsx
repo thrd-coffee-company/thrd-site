@@ -8,7 +8,6 @@ import {
   useDisclosure,
   Collapse,
   Stack,
-  Flex,
   Link,
 } from "@chakra-ui/react";
 import NextLink from "next/link";

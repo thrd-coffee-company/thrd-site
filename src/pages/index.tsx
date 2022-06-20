@@ -1,4 +1,4 @@
-import { Text, Center, Box, Container } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 
 import { Hero } from "../components/hero";
 import { Main } from "../components/main";
