@@ -9,14 +9,18 @@ import {
 } from "@chakra-ui/react";
 import { ChakraNextImage } from "../chakraNextImage";
 import NextImage from "next/image";
-import heroImage from "../../assets/images/hero-group.png";
+import thrdCart from "../../assets/svg/thrd-cart.png";
 
 const Hero = () => {
   return (
     <Box p={8}>
-      <Stack spacing={10} direction="row" justifyContent="space-between">
-        <Box>Hello</Box>
-        <Box>Hello</Box>
+      <Stack direction="column" spacing={4} align="center" justify="center">
+        <Heading fontFamily="body" as="h2" size="3xl" fontWeight="semibold">
+          hi
+        </Heading>
+        <Box width="100%">
+          <NextImage src={thrdCart} />
+        </Box>
       </Stack>
     </Box>
   );
