@@ -22,8 +22,8 @@ const NAV_ITEMS = [
     href: "/about",
   },
   {
-    label: "Puppies",
-    href: "/puppies",
+    label: "Coffee",
+    href: "/coffee",
   },
   {
     label: "Contact Us",
