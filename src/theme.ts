@@ -3,8 +3,8 @@ import { createBreakpoints } from "@chakra-ui/theme-tools";
 
 const fonts = {
   body: "Work Sans, sans-serif",
-  heading: "Source Code Pro, monospace",
-  mono: `'Menlo', monospace`,
+  heading: "Work Sans, monospace",
+  mono: `Source Code Pro, monospace`,
 };
 
 const breakpoints = createBreakpoints({
@@ -58,6 +58,7 @@ const theme = extendTheme({
       500: "#a5a0eb",
       600: "#5b5ed4",
       700: "#333c5c",
+      800: "#612f9d",
     },
     brown: "#9f8b8a",
   },

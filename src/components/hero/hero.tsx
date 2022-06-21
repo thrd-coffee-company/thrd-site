@@ -1,21 +1,32 @@
-import { Box, Stack, Heading } from "@chakra-ui/react";
+import { Box, Stack } from "@chakra-ui/react";
+import { MotionDiv } from "../motionDiv";
 import NextImage from "next/image";
-import thrdCart from "../../assets/svg/thrd-cart.png";
+
+import thrdCart from "../../assets/images/thrd-cart.png";
+import thrdLogo from "../../assets/images/thrd-logo.png";
 
 const Hero = () => {
   return (
-    <Box p={8}>
-      <Stack direction="column" spacing={4} align="center" justify="center">
-        <Heading
-          fontFamily="body"
-          as="h2"
-          size="3xl"
-          fontWeight="semibold"
-          color="brand"
+    <Box className="Hero" bg="purple.500" p={8}>
+      <Stack
+        direction="column"
+        spacing={4}
+        align="center"
+        justify="center"
+        position="relative"
+      >
+        <MotionDiv
+          width="250px"
+          // @ts-ignore
+          transition={{ duration: 5 }}
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+          }}
         >
-          hi
-        </Heading>
-        <Box width="100%">
+          <NextImage src={thrdLogo} alt="Third logo" />
+        </MotionDiv>
+        <Box width="80%">
           <NextImage src={thrdCart} />
         </Box>
       </Stack>

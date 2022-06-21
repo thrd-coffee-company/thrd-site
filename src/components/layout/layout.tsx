@@ -3,7 +3,7 @@ import { Navbar } from "../navbar";
 
 const Layout = ({ children }) => {
   return (
-    <Box width="100vw" height="100vh" bg="purple.500">
+    <Box className="layout" width="100vw" height="100vh" overflow="auto">
       <Navbar />
       {children}
     </Box>

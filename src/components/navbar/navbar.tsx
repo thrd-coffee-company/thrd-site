@@ -36,7 +36,7 @@ const Navbar = () => {
   const { asPath } = useRouter();
 
   return (
-    <Box as="section" pb={{ base: "12" }}>
+    <Box as="section" pb={{ base: "12" }} bg="purple.500">
       <Box as="nav" bg="bg-surface">
         <Container maxW="container.xl" py={{ base: "4", lg: "5" }}>
           <HStack spacing="10" justify="space-between">
