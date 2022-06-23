@@ -7,7 +7,7 @@ import thrdLogo from "../../assets/images/thrd-logo.png";
 
 const Hero = () => {
   return (
-    <Box id="Hero" className="Hero" bg="purple.500" p={8}>
+    <Box id="Hero" className="Hero" bg="purple.500" p={12}>
       <Stack
         direction="column"
         spacing={4}
@@ -25,14 +25,20 @@ const Hero = () => {
           }}
         >
           <Box
+            className="Hero__logo"
             sx={{
-              transform: "translateX(-200%) scale(1.5)",
+              transform: {
+                base: "translateX(-50%) translateY(-100%) scale(.75)",
+                sm: "translateX(-75%) scale(1)",
+                md: "translateX(-100%) scale(1.5)",
+                lg: "translateX(-200%) scale(1.5)",
+              },
             }}
           >
             <NextImage src={thrdLogo} alt="Third logo" placeholder="blur" />
           </Box>
         </MotionDiv>
-        <Box width="40%">
+        <Box width={{ base: "80%", sm: "70%", md: "60%", lg: "50%" }}>
           <NextImage src={thrdCart} placeholder="blur" />
         </Box>
       </Stack>
