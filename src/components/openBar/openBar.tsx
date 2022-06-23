@@ -23,9 +23,7 @@ const OpenBar = () => {
       bg="purple.700"
       p={{ base: 8, sm: 20 }}
     >
-      <Heading color="pink.600" textAlign={{ base: "center", sm: "left" }}>
-        Services
-      </Heading>
+      <Heading color="pink.600">Services</Heading>
       <SectionContainer p={{ base: 2, lg: 8 }}>
         <Center mb={12}>
           <DoubleText
