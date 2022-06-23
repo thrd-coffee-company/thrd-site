@@ -24,10 +24,10 @@ const AboutUs = () => {
       <SectionContainer p={{ base: 2, lg: 8 }}>
         <Stack
           spacing={10}
-          direction={{ base: "column", md: "column", lg: "row" }}
+          direction={{ base: "column", lg: "row" }}
           mb={{ base: 12, lg: 28 }}
         >
-          <Box width={{ base: "100%", md: "100%", lg: "50%" }}>
+          <Box width={{ base: "100%", lg: "50%" }}>
             <NextImage src={raoulAndCard} alt="Raoul serving coffee" />
           </Box>
           <VStack

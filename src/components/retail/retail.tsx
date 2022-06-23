@@ -27,7 +27,11 @@ const Retail = () => {
       <Heading color="purple.600">Services</Heading>
       <SectionContainer p={8}>
         <Center mb={12}>
-          <DoubleText textColor="purple.600" shadowColor={PURPLE_500_RGB}>
+          <DoubleText
+            textColor="purple.600"
+            shadowColor={PURPLE_500_RGB}
+            fontSize="10rem"
+          >
             RETAIL
           </DoubleText>
         </Center>

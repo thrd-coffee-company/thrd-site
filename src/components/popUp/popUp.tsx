@@ -18,7 +18,9 @@ const PopUp = () => {
       <Heading color="pink.600">Services</Heading>
       <SectionContainer p={8}>
         <Center mb={12}>
-          <DoubleText textColor="purple.800">POP UP</DoubleText>
+          <DoubleText textColor="purple.800" fontSize="10rem">
+            POP UP
+          </DoubleText>
         </Center>
         <Stack direction="row" spacing={8} color="purple.800" fontSize="2xl">
           <Box width="50%">

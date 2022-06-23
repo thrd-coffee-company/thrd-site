@@ -1,7 +1,7 @@
 import { Text } from "@chakra-ui/react";
 
 const DoubleText = ({
-  fontSize = "10rem",
+  // fontSize = "10rem",
   offset = "15px",
   textColor,
   shadowColor = "white",
@@ -10,7 +10,7 @@ const DoubleText = ({
 }) => {
   return (
     <Text
-      fontSize={fontSize}
+      // fontSize={fontSize}
       fontWeight="bold"
       letterSpacing="wide"
       color={textColor}

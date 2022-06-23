@@ -7,6 +7,7 @@ import {
   VStack,
   UnorderedList,
   ListItem,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { SectionContainer } from "../sectionContainer";
 import { DoubleText } from "../doubleText";
@@ -16,14 +17,28 @@ import ccLine from "../../assets/images/cc-line.jpg";
 
 const OpenBar = () => {
   return (
-    <Box id="open-bar" className="Services" bg="purple.700" p={20}>
-      <Heading color="pink.600">Services</Heading>
-      <SectionContainer p={8}>
-        <Center flexWrap="wrap" mb={12}>
-          <DoubleText textColor="purple.600">OPEN BAR</DoubleText>
+    <Box
+      id="open-bar"
+      className="Services"
+      bg="purple.700"
+      p={{ base: 8, sm: 20 }}
+    >
+      <Heading color="pink.600" textAlign={{ base: "center", sm: "left" }}>
+        Services
+      </Heading>
+      <SectionContainer p={{ base: 2, lg: 8 }}>
+        <Center mb={12}>
+          <DoubleText
+            textColor="purple.600"
+            fontSize={{ base: "5rem", sm: "7rem", md: "8rem", lg: "10rem" }}
+            textAlign={{ base: "center", lg: "left" }}
+            offset={useBreakpointValue({ base: "5px", lg: "15px" })}
+          >
+            OPEN BAR
+          </DoubleText>
         </Center>
-        <Stack direction="row" spacing={20}>
-          <Box width="50%">
+        <Stack direction={{ base: "column", lg: "row" }} spacing={20}>
+          <Box width={{ base: "100%", lg: "50%" }}>
             <NextImage
               src={ccDrinkInFront}
               alt="Coffee cup in front of bar"
@@ -31,7 +46,7 @@ const OpenBar = () => {
             />
           </Box>
           <VStack
-            width="50%"
+            width={{ base: "100%", lg: "50%" }}
             justify="space-around"
             color="pink.600"
             fontSize="2xl"
@@ -46,10 +61,10 @@ const OpenBar = () => {
                 <ListItem>Parties/Events/Weddings</ListItem>
               </UnorderedList>
             </Text>
-            <Box>
-              <NextImage src={ccLine} alt="People in line" placeholder="blur" />
-            </Box>
           </VStack>
+          <Box>
+            <NextImage src={ccLine} alt="People in line" placeholder="blur" />
+          </Box>
         </Stack>
       </SectionContainer>
     </Box>

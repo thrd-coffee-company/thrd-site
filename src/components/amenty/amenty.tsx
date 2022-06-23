@@ -23,7 +23,11 @@ const Amenty = () => {
       <Heading color="pink.600">Services</Heading>
       <SectionContainer p={8}>
         <Center mb={12}>
-          <DoubleText textColor="white" shadowColor={PINK_600_RGB}>
+          <DoubleText
+            textColor="white"
+            shadowColor={PINK_600_RGB}
+            fontSize="10rem"
+          >
             AMEN.TY
           </DoubleText>
         </Center>
