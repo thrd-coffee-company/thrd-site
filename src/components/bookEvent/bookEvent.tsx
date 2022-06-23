@@ -17,17 +17,27 @@ const BookEvent = () => {
           <Center>
             <DoubleText
               textColor="purple.600"
-              fontSize={{ base: "3rem", sm: "5rem", md: "7rem", lg: "10rem" }}
-              textAlign={{ base: "center", lg: "left" }}
+              fontSize={{ base: "3rem", sm: "5rem" }}
+              textAlign={{ base: "center" }}
               offset="0px"
             >
               BOOK EVENT
             </DoubleText>
           </Center>
-          <Text fontSize="xl" fontWeight="bold" color="white">
+          <Text
+            fontSize="xl"
+            fontWeight="bold"
+            color="white"
+            textAlign="center"
+          >
             We are now accepting bookings for events!
           </Text>
-          <Text fontSize="xl" fontWeight="bold" color="white">
+          <Text
+            fontSize="xl"
+            fontWeight="bold"
+            color="white"
+            textAlign="center"
+          >
             Fill out the form below to find out more
           </Text>
         </Stack>
