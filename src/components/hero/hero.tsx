@@ -29,11 +29,11 @@ const Hero = () => {
               transform: "translateX(-200%) scale(1.5)",
             }}
           >
-            <NextImage src={thrdLogo} alt="Third logo" />
+            <NextImage src={thrdLogo} alt="Third logo" placeholder="blur" />
           </Box>
         </MotionDiv>
         <Box width="40%">
-          <NextImage src={thrdCart} />
+          <NextImage src={thrdCart} placeholder="blur" />
         </Box>
       </Stack>
     </Box>

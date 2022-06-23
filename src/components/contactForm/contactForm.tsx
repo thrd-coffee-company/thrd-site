@@ -8,6 +8,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { Formik, Form, Field } from "formik";
+import { useRouter } from "next/router";
 import * as Yup from "yup";
 
 const phoneRegExp =
@@ -35,6 +36,7 @@ const encode = (data) => {
 };
 
 const ContactForm = () => {
+  const router = useRouter();
   return (
     <Formik
       initialValues={{
@@ -47,13 +49,12 @@ const ContactForm = () => {
       }}
       validationSchema={SignupSchema}
       onSubmit={(values, actions) => {
-        console.log("actions: ", actions);
         fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: encode({ "form-name": "book-event", ...values }),
         })
-          .then(() => alert("Success!"))
+          .then(() => router.push("/success"))
           .catch((error) => alert(error));
 
         actions.setSubmitting(false);
