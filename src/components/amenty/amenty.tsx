@@ -34,7 +34,10 @@ const Amenty = () => {
             shadowColor={PINK_600_RGB}
             fontSize={{ base: "5rem", sm: "7rem", md: "8rem", lg: "10rem" }}
             textAlign={{ base: "center", lg: "left" }}
-            offset={useBreakpointValue({ base: "5px", md: "10px", lg: "15px" })}
+            offset={useBreakpointValue({
+              base: "10px",
+              lg: "15px",
+            })}
           >
             AMEN.TY
           </DoubleText>

@@ -8,6 +8,7 @@ import {
   Text,
   UnorderedList,
   ListItem,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { SectionContainer } from "../sectionContainer";
 import { DoubleText } from "../doubleText";
@@ -23,14 +24,25 @@ const PURPLE_500_RGB = "rgb(165,160,235)";
 
 const Retail = () => {
   return (
-    <Box id="retail" className="Retail" bg="pink.700" p={20} height="auto">
+    <Box
+      id="retail"
+      className="Retail"
+      bg="pink.700"
+      p={{ base: 8, sm: 20 }}
+      height="auto"
+    >
       <Heading color="purple.600">Services</Heading>
       <SectionContainer p={8}>
         <Center mb={12}>
           <DoubleText
             textColor="purple.600"
             shadowColor={PURPLE_500_RGB}
-            fontSize="10rem"
+            fontSize={{ base: "5rem", sm: "7rem", md: "8rem", lg: "10rem" }}
+            textAlign={{ base: "center", lg: "left" }}
+            offset={useBreakpointValue({
+              base: "10px",
+              lg: "15px",
+            })}
           >
             RETAIL
           </DoubleText>
@@ -48,24 +60,24 @@ const Retail = () => {
           </Text>
         </HStack>
         <Stack
-          direction="row"
+          direction={{ base: "column", lg: "row" }}
           spacing={8}
           justify="space-evenly"
           flexWrap="wrap"
         >
-          <Box width="25%">
+          <Box width={{ base: "100%", lg: "25%" }}>
             <NextImage src={thrdBag} alt="Tote bag" placeholder="blur" />
           </Box>
-          <Box width="25%">
+          <Box width={{ base: "100%", lg: "25%" }}>
             <NextImage src={thrdBagsDog} alt="Tote bag" placeholder="blur" />
           </Box>
-          <Box width="25%">
+          <Box width={{ base: "100%", lg: "25%" }}>
             <NextImage src={thrdBlueShirt} alt="Tote bag" placeholder="blur" />
           </Box>
-          <Box width="30%">
+          <Box width={{ base: "100%", lg: "25%" }}>
             <NextImage src={thrdHat} alt="Tote bag" placeholder="blur" />
           </Box>
-          <Box width="50%">
+          <Box width={{ base: "100%", md: "50%" }}>
             <NextImage src={thrdCouple} alt="Tote bag" placeholder="blur" />
           </Box>
         </Stack>
@@ -77,7 +89,16 @@ const Retail = () => {
             fontSize="2xl"
             isExternal
           >
-            <DoubleText fontSize="5rem" textColor="purple.800" offset="10px">
+            <DoubleText
+              textColor="purple.800"
+              fontSize={{ base: "3rem", sm: "5rem" }}
+              textAlign={{ base: "center", lg: "left" }}
+              offset={useBreakpointValue({
+                base: "5px",
+                sm: "7px",
+                md: "10px",
+              })}
+            >
               CLICK ME & SHOP
             </DoubleText>
           </Link>

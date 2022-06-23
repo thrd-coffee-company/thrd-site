@@ -9,13 +9,18 @@ const BookEvent = () => {
       id="book-event"
       className="BookEvent"
       bg="pink.700"
-      p={20}
+      p={{ base: 8, sm: 20 }}
       height="auto"
     >
       <SectionContainer p={8} maxW="container.md">
         <Stack direction="column" align="center" mb={10}>
           <Center>
-            <DoubleText textColor="purple.600" fontSize="5rem" offset="0px">
+            <DoubleText
+              textColor="purple.600"
+              fontSize={{ base: "3rem", sm: "5rem", md: "7rem", lg: "10rem" }}
+              textAlign={{ base: "center", lg: "left" }}
+              offset="0px"
+            >
               BOOK EVENT
             </DoubleText>
           </Center>

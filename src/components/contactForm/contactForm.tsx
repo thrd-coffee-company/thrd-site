@@ -70,7 +70,7 @@ const ContactForm = () => {
         >
           <input type="hidden" name="form-name" value="book-event" />
           <Stack spacing={6}>
-            <Stack direction={{ sm: "column", lg: "row" }} spacing={8}>
+            <Stack direction={{ base: "column", lg: "row" }} spacing={8}>
               <Field name="firstName">
                 {({ field, form }) => (
                   <FormControl
