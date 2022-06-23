@@ -14,7 +14,7 @@ import ccPopUp from "../../assets/images/cc-popup.jpg";
 
 const PopUp = () => {
   return (
-    <Box className="Pop-up" bg="brown" p={20} height="auto">
+    <Box id="pop-up" className="Pop-up" bg="brown" p={20} height="auto">
       <Heading color="pink.600">Services</Heading>
       <SectionContainer p={8}>
         <Center mb={12}>
@@ -22,7 +22,11 @@ const PopUp = () => {
         </Center>
         <Stack direction="row" spacing={8} color="purple.800" fontSize="2xl">
           <Box width="50%">
-            <NextImage src={ccPopUp} alt="Coffee cup in front of bar" />
+            <NextImage
+              src={ccPopUp}
+              placeholder="blur"
+              alt="Coffee cup in front of bar"
+            />
           </Box>
           <Text width="50%">
             Think mini-coffee shop: client covers our traveling cost & labor

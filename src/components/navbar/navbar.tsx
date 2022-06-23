@@ -18,15 +18,15 @@ import { SocialIconsButtonGroup } from "../socialMediaIcons";
 const NAV_ITEMS = [
   {
     label: "About Us",
-    href: "/about",
+    href: "#about-us",
   },
   {
-    label: "Coffee",
-    href: "/coffee",
+    label: "Services",
+    href: "#open-bar",
   },
   {
-    label: "Contact Us",
-    href: "/contact",
+    label: "Book Event",
+    href: "#book-event",
   },
 ];
 
@@ -51,8 +51,9 @@ const Navbar = () => {
                       <Button key={item.label}>
                         <NextLink href={item.href} passHref>
                           <Link
-                            fontWeight="normal"
+                            fontWeight="bold"
                             aria-current={ariaCurent}
+                            color="white"
                             _activeLink={{
                               fontWeight: "semibold",
                             }}

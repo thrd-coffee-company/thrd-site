@@ -1,16 +1,20 @@
 import { Hero } from "../components/hero";
-import { Main } from "../components/main";
 import { AboutUs } from "../components/aboutUs";
-import { Services } from "../components/services";
+import { OpenBar } from "../components/openBar";
 import { PopUp } from "../components/popUp";
+import { Amenty } from "../components/amenty";
+import { Retail } from "../components/retail";
+import { BookEvent } from "../components/bookEvent";
 
 const Index = () => (
   <>
     <Hero />
-    <Main />
     <AboutUs />
-    <Services />
+    <OpenBar />
     <PopUp />
+    <Amenty />
+    <Retail />
+    <BookEvent />
   </>
 );
 

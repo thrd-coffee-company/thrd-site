@@ -1,13 +1,20 @@
 import { Text } from "@chakra-ui/react";
 
-const DoubleText = ({ textColor, children, ...props }) => {
+const DoubleText = ({
+  fontSize = "10rem",
+  offset = "15px",
+  textColor,
+  shadowColor = "white",
+  children,
+  ...props
+}) => {
   return (
     <Text
-      fontSize="10rem"
+      fontSize={fontSize}
       fontWeight="bold"
-      lineHeight="shorter"
+      letterSpacing="wide"
       color={textColor}
-      textShadow="0px 15px 0px white"
+      textShadow={`0px ${offset} 0px ${shadowColor}`}
       {...props}
     >
       {children}

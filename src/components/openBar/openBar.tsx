@@ -14,9 +14,9 @@ import NextImage from "next/image";
 import ccDrinkInFront from "../../assets/images/cc-drink-infront.jpg";
 import ccLine from "../../assets/images/cc-line.jpg";
 
-const Services = () => {
+const OpenBar = () => {
   return (
-    <Box className="Services" bg="purple.700" p={20}>
+    <Box id="open-bar" className="Services" bg="purple.700" p={20}>
       <Heading color="pink.600">Services</Heading>
       <SectionContainer p={8}>
         <Center flexWrap="wrap" mb={12}>
@@ -24,7 +24,11 @@ const Services = () => {
         </Center>
         <Stack direction="row" spacing={20}>
           <Box width="50%">
-            <NextImage src={ccDrinkInFront} alt="Coffee cup in front of bar" />
+            <NextImage
+              src={ccDrinkInFront}
+              alt="Coffee cup in front of bar"
+              placeholder="blur"
+            />
           </Box>
           <VStack
             width="50%"
@@ -43,7 +47,7 @@ const Services = () => {
               </UnorderedList>
             </Text>
             <Box>
-              <NextImage src={ccLine} alt="People in line" />
+              <NextImage src={ccLine} alt="People in line" placeholder="blur" />
             </Box>
           </VStack>
         </Stack>
@@ -52,4 +56,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default OpenBar;

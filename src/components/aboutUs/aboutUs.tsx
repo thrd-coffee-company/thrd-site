@@ -7,7 +7,7 @@ import { SectionContainer } from "../sectionContainer";
 
 const AboutUs = () => {
   return (
-    <Box className="About-us" p={20} bg="pink.600" height="auto">
+    <Box id="about-us" className="About-us" p={20} bg="pink.600" height="auto">
       <Heading color="brand">About us</Heading>
       <SectionContainer p={8}>
         <Stack spacing={10} direction="row" mb={28}>
@@ -44,6 +44,7 @@ const AboutUs = () => {
           <Box>
             <NextImage
               src={employeePouringDrink}
+              placeholder="blur"
               alt="Employee pouring drink"
             />
           </Box>
