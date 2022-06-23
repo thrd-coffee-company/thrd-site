@@ -7,14 +7,35 @@ import { SectionContainer } from "../sectionContainer";
 
 const AboutUs = () => {
   return (
-    <Box id="about-us" className="About-us" p={20} bg="pink.600" height="auto">
-      <Heading color="brand">About us</Heading>
-      <SectionContainer p={8}>
-        <Stack spacing={10} direction="row" mb={28}>
-          <Box>
+    <Box
+      id="about-us"
+      className="About-us"
+      p={{ base: 8, sm: 20 }}
+      bg="pink.600"
+      height="auto"
+    >
+      <Heading
+        color="brand"
+        textAlign={{ base: "center", sm: "left" }}
+        my={{ base: 4, sm: 0 }}
+      >
+        About us
+      </Heading>
+      <SectionContainer p={{ base: 2, lg: 8 }}>
+        <Stack
+          spacing={10}
+          direction={{ base: "column", md: "column", lg: "row" }}
+          mb={{ base: 12, lg: 28 }}
+        >
+          <Box width={{ base: "100%", md: "100%", lg: "50%" }}>
             <NextImage src={raoulAndCard} alt="Raoul serving coffee" />
           </Box>
-          <VStack spacing={6} color="white" fontSize="xl" width="50%">
+          <VStack
+            spacing={6}
+            color="white"
+            fontSize="xl"
+            width={{ base: "100%", lg: "50%" }}
+          >
             <Text>
               thrd. coffee company was born of the pandemic. In early 2020,
               Raoul did not foresee having a mobile coffee business; but, during
@@ -29,8 +50,16 @@ const AboutUs = () => {
             </Text>
           </VStack>
         </Stack>
-        <Stack spacing={10} direction="row">
-          <VStack spacing={6} color="white" fontSize="xl" width="50%">
+        <Stack
+          spacing={10}
+          direction={{ base: "column", md: "column", lg: "row" }}
+        >
+          <VStack
+            spacing={6}
+            color="white"
+            fontSize="xl"
+            width={{ base: "100%", lg: "50%" }}
+          >
             <Text>
               During a time in which coffee shops were closed down, thrd coffee
               knew that we could bring customers a coffee shop expierience
@@ -41,7 +70,7 @@ const AboutUs = () => {
               atmosphere to places where they typically wouldn&apos;t be found.
             </Text>
           </VStack>
-          <Box>
+          <Box width={{ base: "100%", md: "100%", lg: "50%" }}>
             <NextImage
               src={employeePouringDrink}
               placeholder="blur"
