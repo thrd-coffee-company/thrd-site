@@ -1,6 +1,12 @@
 import { ButtonGroup, IconButton, Link } from "@chakra-ui/react";
-import { FiInstagram, FiShoppingCart } from "react-icons/fi";
+import {
+  FiInstagram,
+  FiShoppingCart,
+  FiFacebook,
+  FiLinkedin,
+} from "react-icons/fi";
 import { RiSpotifyLine } from "react-icons/ri";
+import { FaTiktok } from "react-icons/fa";
 
 const SocialIconsButtonGroup = () => {
   return (
@@ -15,10 +21,33 @@ const SocialIconsButtonGroup = () => {
           }}
         />
       </Link>
-      <Link href="https://cashdrop.biz/thrdcoffee" isExternal>
+      <Link href="https://www.facebook.com/thrdcoffeeco/" isExternal>
         <IconButton
-          aria-label="Store"
-          icon={<FiShoppingCart />}
+          aria-label="Facebook"
+          icon={<FiFacebook />}
+          variant="ghost"
+          _hover={{
+            backgroundColor: "purple.700",
+          }}
+        />
+      </Link>
+      <Link href="http://www.tiktok.com/@thrdcoffeeco" isExternal>
+        <IconButton
+          aria-label="Tik Tok"
+          icon={<FaTiktok />}
+          variant="ghost"
+          _hover={{
+            backgroundColor: "purple.700",
+          }}
+        />
+      </Link>
+      <Link
+        href="https://www.linkedin.com/company/thrd-coffee-company-llc"
+        isExternal
+      >
+        <IconButton
+          aria-label="LinkedIn"
+          icon={<FiLinkedin />}
           variant="ghost"
           _hover={{
             backgroundColor: "purple.700",
@@ -32,6 +61,16 @@ const SocialIconsButtonGroup = () => {
         <IconButton
           aria-label="Spotify"
           icon={<RiSpotifyLine />}
+          variant="ghost"
+          _hover={{
+            backgroundColor: "purple.700",
+          }}
+        />
+      </Link>
+      <Link href="https://cashdrop.biz/thrdcoffee" isExternal>
+        <IconButton
+          aria-label="Store"
+          icon={<FiShoppingCart />}
           variant="ghost"
           _hover={{
             backgroundColor: "purple.700",
