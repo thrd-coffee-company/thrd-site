@@ -15,7 +15,7 @@ yarn install
 Once installed make sure you're in the root of the project and run the following command to launch the site in development mode
 
 ```bash
-yarn start
+yarn dev
 ```
 
 ## Conventional Commits
