@@ -35,8 +35,8 @@ const Press = () => {
     <Box
       id="press"
       className="press"
-      bg="brown"
-      p={{ base: 8, sm: 20 }}
+      bg="purple.500"
+      p={{ base: 8, sm: 28 }}
       height="auto"
     >
       <Heading color="pink.600">Press</Heading>
