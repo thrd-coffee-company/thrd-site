@@ -60,10 +60,10 @@ const OpenBar = () => {
               </UnorderedList>
             </Text>
           </VStack>
-          <Box>
-            <NextImage src={ccLine} alt="People in line" placeholder="blur" />
-          </Box>
         </Stack>
+        <Box mt={10}>
+          <NextImage src={ccLine} alt="People in line" placeholder="blur" />
+        </Box>
       </SectionContainer>
     </Box>
   );
