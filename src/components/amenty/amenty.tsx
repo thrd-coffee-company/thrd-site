@@ -61,13 +61,13 @@ const Amenty = () => {
               fontSize="2xl"
               width={{ base: "100%", lg: "40%" }}
             >
-              A service in which drinks are unlimited for a specific amount of
-              time. The host chooses from 3 different packages package that is
-              best suited for their needs and desired experience
+              A service that is for a long term arrangement. Client has a vacant
+              space, we bring the equipment, products, and team. Host covers the
+              difference of our sales goal (based on pro forma) and actual sales
+              monthly. Can also be fully covered by client and free to guests.
               <UnorderedList mt={8}>
-                <ListItem>Residential/Condo Buildings</ListItem>
-                <ListItem>Corporate Offices</ListItem>
-                <ListItem>Parties/Events/Weddings</ListItem>
+                <ListItem>Property Buildings</ListItem>
+                <ListItem>Gym/Places of gatherings</ListItem>
               </UnorderedList>
             </Text>
           </Stack>
