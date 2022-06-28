@@ -51,8 +51,8 @@ const OpenBar = () => {
           >
             <Text>
               A service in which drinks are unlimited for a specific amount of
-              time. The host chooses from 3 different packages package that is
-              best suited for their needs and desired expereince
+              time. The host chooses from 3 different packages that is best
+              suited for their needs and desired experience
               <UnorderedList mt={8}>
                 <ListItem>Residential/Condo Buildings</ListItem>
                 <ListItem>Corporate Offices</ListItem>

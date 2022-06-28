@@ -12,7 +12,7 @@ const Footer = () => {
       >
         <SocialIconsButtonGroup />
         <Text as="span" textAlign="center">
-          © {new Date().getFullYear()} Copyright: Thrd Coffee Company
+          © {new Date().getFullYear()} Copyright: THRD COFFEE COMPANY, LLC
         </Text>
       </Stack>
     </Box>
