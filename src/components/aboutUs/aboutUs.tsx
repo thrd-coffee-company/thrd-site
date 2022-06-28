@@ -37,7 +37,7 @@ const AboutUs = () => {
             width={{ base: "100%", lg: "50%" }}
           >
             <Text>
-              thrd. coffee company was born of the pandemic. In early 2020,
+              thrd. coffee company was born out of the pandemic. In early 2020,
               Raoul did not foresee having a mobile coffee business; but, during
               the shutdown he invested his time creating a competitive business
               plan and designed the mobile bar and brand.
