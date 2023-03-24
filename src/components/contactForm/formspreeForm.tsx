@@ -10,6 +10,7 @@ import {
 import { Formik, Form, Field } from 'formik';
 import { useRouter } from 'next/router';
 import * as Yup from 'yup';
+import axios from 'axios';
 
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
@@ -29,16 +30,7 @@ const SignupSchema = Yup.object().shape({
   message: Yup.string().min(10, 'Too Short!').required('Required')
 });
 
-const encode = (data) => {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&');
-};
-
-/**
- * @deprecated Don't use this form, use formspree instead
- */
-const ContactForm = () => {
+const FormspreeForm = () => {
   const router = useRouter();
   return (
     <Formik
@@ -52,15 +44,17 @@ const ContactForm = () => {
       }}
       validationSchema={SignupSchema}
       onSubmit={(values, actions) => {
-        fetch('/', {
+        axios({
           method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: encode({ 'form-name': 'book-event', ...values })
+          url: 'https://formspree.io/f/xpzejprw',
+          data: values
         })
-          .then(() => router.push('/success'))
-          .catch((error) => alert(error));
-
+        .catch((error) => {
+          console.log(error);
+        });
+        actions.resetForm();
         actions.setSubmitting(false);
+        router.push('/success');
       }}
     >
       {(props) => (
@@ -68,11 +62,7 @@ const ContactForm = () => {
           name="book-event"
           method="post"
           action="/success"
-          data-netlify="true"
-          data-netlify-recaptcha="true"
-          data-netlify-honeypot="bot-field"
         >
-          <input type="hidden" name="form-name" value="book-event" />
           <Stack spacing={6}>
             <Stack direction={{ base: 'column', lg: 'row' }} spacing={8}>
               <Field name="firstName">
@@ -177,7 +167,7 @@ const ContactForm = () => {
               )}
             </Field>
           </Stack>
-          <Stack mt={4} direction='row'>
+          <Stack mt={4} direction="row">
             <Button
               type="submit"
               mr={4}
@@ -188,7 +178,6 @@ const ContactForm = () => {
             >
               Submit
             </Button>
-            <div data-netlify-recaptcha="true"></div>
           </Stack>
         </Form>
       )}
@@ -196,4 +185,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+export { FormspreeForm };

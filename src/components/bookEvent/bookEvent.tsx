@@ -1,7 +1,7 @@
 import { Box, Stack, Center, Text } from "@chakra-ui/react";
 import { SectionContainer } from "../sectionContainer";
 import { DoubleText } from "../doubleText";
-import { ContactForm } from "../contactForm";
+import {FormspreeForm} from '../contactForm'
 
 const BookEvent = () => {
   return (
@@ -41,7 +41,7 @@ const BookEvent = () => {
             Fill out the form below to find out more
           </Text>
         </Stack>
-        <ContactForm />
+        <FormspreeForm />
       </SectionContainer>
     </Box>
   );
