@@ -11,6 +11,7 @@ import { Formik, Form, Field } from 'formik';
 import { useRouter } from 'next/router';
 import * as Yup from 'yup';
 import axios from 'axios';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
@@ -31,6 +32,7 @@ const SignupSchema = Yup.object().shape({
 });
 
 const FormspreeForm = () => {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const router = useRouter();
   return (
     <Formik
@@ -43,26 +45,17 @@ const FormspreeForm = () => {
         message: ''
       }}
       validationSchema={SignupSchema}
-      onSubmit={(values, actions) => {
-        axios({
-          method: 'POST',
-          url: 'https://formspree.io/f/xpzejprw',
-          data: values
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-        actions.resetForm();
-        actions.setSubmitting(false);
-        router.push('/success');
+      onSubmit={async (values, actions) => {
+        if(!executeRecaptcha) {
+          console.log('Recaptcha not loaded');
+          return;
+        }
+        const token = await executeRecaptcha('contactForm');
+        console.log('Token: ', token);
       }}
     >
       {(props) => (
-        <Form
-          name="book-event"
-          method="post"
-          action="/success"
-        >
+        <Form name="book-event" method="post" action="/success">
           <Stack spacing={6}>
             <Stack direction={{ base: 'column', lg: 'row' }} spacing={8}>
               <Field name="firstName">
@@ -186,3 +179,16 @@ const FormspreeForm = () => {
 };
 
 export { FormspreeForm };
+
+
+
+//  axios({
+//    method: 'POST',
+//    url: 'https://formspree.io/f/xpzejprw',
+//    data: values
+//  }).catch((error) => {
+//    console.log(error);
+//  });
+//  actions.resetForm();
+//  actions.setSubmitting(false);
+//  router.push('/success');
