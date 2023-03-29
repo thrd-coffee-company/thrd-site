@@ -26,7 +26,7 @@ const SignupSchema = Yup.object().shape({
     .required('Required'),
   company: Yup.string(),
   email: Yup.string().email('Invalid email').required('Required'),
-  phoneNumber: Yup.string().matches(phoneRegExp, 'Invalid phone number'),
+  phoneNumber: Yup.string().matches(phoneRegExp, 'Invalid phone number').required('Required'),
   message: Yup.string().min(10, 'Too Short!').required('Required')
 });
 
